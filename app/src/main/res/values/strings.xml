@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ToDoMVVM</string>
+    <string name="add_task">add task</string>
+    <string name="hint_task_title">Task title...</string>
+    <string name="hint_task_desc">Task description...</string>
+    <string name="save_task">Save</string>
+    <string name="no_tasks">No tasks for today. Enjoy your free time!</string>
+    <string name="main_toolbar_title">Tasks List</string>
+    <string name="addtask_toolbar_title">New Task</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+
+</resources>
