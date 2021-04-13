@@ -8,5 +8,7 @@
     <string name="main_toolbar_title">Tasks List</string>
     <string name="addtask_toolbar_title">New Task</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="description">Description</string>
+    <string name="default_date">00/00/00</string>
 
 </resources>

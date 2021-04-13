@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relative_layout"
     android:layout_width="match_parent"
@@ -12,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:minWidth="0dp"
-        android:minHeight="0dp" />
+        android:minHeight="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_title"
@@ -23,9 +26,11 @@
         android:layout_alignBottom="@id/checkbox"
         android:layout_toEndOf="@id/checkbox"
         android:ellipsize="end"
-        android:gravity="center_vertical"
+        android:layout_marginStart="8dp"
         android:maxLines="1"
         android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/checkbox"
+        app:layout_constraintTop_toTopOf="@+id/checkbox"
         tools:text="Example item" />
 
     <TextView
@@ -34,9 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_title"
         android:layout_alignStart="@id/textView_title"
-        android:gravity="center_vertical"
-        android:paddingStart="10dp"
-        android:text="Description" />
+        android:layout_marginTop="8dp"
+        android:text="@string/description"
+        app:layout_constraintStart_toStartOf="@+id/textView_title"
+        app:layout_constraintTop_toBottomOf="@+id/textView_title" />
 
     <TextView
         android:id="@+id/TextView_created"
@@ -44,19 +50,20 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView_desc"
         android:layout_alignStart="@id/textView_desc"
-        android:gravity="center_vertical"
-        android:paddingStart="10dp"
-        android:text="Created on: " />
+        android:layout_marginTop="8dp"
+        android:text="Created on: "
+        app:layout_constraintStart_toStartOf="@+id/textView_desc"
+        app:layout_constraintTop_toBottomOf="@+id/textView_desc" />
 
     <TextView
         android:id="@+id/TextView_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/TextView_created"
-        android:layout_toRightOf="@id/TextView_created"
         android:gravity="center_vertical"
-        android:paddingStart="2dp"
-        android:text="00/00/00"
-        android:textColor="@color/blue_grey_dark" />
+        android:layout_marginStart="8dp"
+        android:text="@string/default_date"
+        android:textColor="@color/blue_grey_dark"
+        app:layout_constraintStart_toEndOf="@+id/TextView_created"
+        app:layout_constraintTop_toTopOf="@+id/TextView_created" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
