@@ -79,22 +79,9 @@ class TaskListAdapter(taskItemClickListener: TaskItemClickListener) :
                 listener.onClick(task)
             }
 
-            fun checkCompleted(){
-                if(task.completed) {
-                    taskItemViewTitle.apply {
-                        paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-                    }
-                    taskItemViewDesc.apply {
-                        paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-                    }
-                    taskItemViewDate.apply {
-                        paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-                    }
-                }
+            checkBox.setOnClickListener {
+                listener.onClick(task)
             }
-
-
-
         }
 
         companion object {
