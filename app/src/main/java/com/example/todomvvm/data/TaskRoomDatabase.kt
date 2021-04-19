@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 @Database(
     entities = [Task::class], // here we define which tables we will have in our database
-    version = 4,
+    version = 5,
     exportSchema = false
 ) //we set exportSchema to false here to avoid a build warning.
 abstract class TaskRoomDatabase : RoomDatabase() {

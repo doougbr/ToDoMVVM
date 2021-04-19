@@ -11,8 +11,8 @@ import java.text.DateFormat
 @Parcelize  // allows to move object to another activity
 data class Task(
     @ColumnInfo(name = "task") val task: String,
-    @ColumnInfo(name = "desc") val desc: String = "Sem descrição",
-    @ColumnInfo(name = "created") val created: String = "0/0/00",
+    @ColumnInfo(name = "desc") val desc: String? = null,
+    @ColumnInfo(name = "created") val created: String? = null,
     @ColumnInfo(name = "completed") var completed: Boolean = false,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 ) : Parcelable

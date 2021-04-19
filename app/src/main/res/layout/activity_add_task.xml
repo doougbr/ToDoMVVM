@@ -71,7 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="28dp"
-        android:text="Date created:"
+        android:text="@string/date_created"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@id/editText_task_desc"
         app:layout_constraintTop_toBottomOf="@id/editText_task_desc" />
 
@@ -80,6 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/textView_dateCreated"
         app:layout_constraintStart_toEndOf="@id/textView_dateCreated"
         app:layout_constraintTop_toTopOf="@+id/textView_dateCreated" />
