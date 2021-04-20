@@ -12,6 +12,7 @@ import com.example.todomvvm.R
 import com.example.todomvvm.data.Task
 import com.example.todomvvm.databinding.ActivityAddTaskBinding
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
 import java.util.*
 
 class AddTaskActivity : AppCompatActivity() {
@@ -35,18 +36,16 @@ class AddTaskActivity : AppCompatActivity() {
             if (TextUtils.isEmpty(editTextTaskTitle.text)) {
                 setResult(Activity.RESULT_CANCELED, intent)
             } else {
-                val calendar = Calendar.getInstance()
-                val year = calendar.get(Calendar.YEAR)
-                val month = calendar.get(Calendar.MONTH) + 1
-                val day = calendar.get(Calendar.DAY_OF_MONTH)
-                val today = "$month/$day/$year"
+                val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm")
+                val date = Date()
+                val dateToday = sdf.format(date)
                 val task = Task(
                     task = editTextTaskTitle.text.toString(),
                     desc = editTextTaskDesc.text.toString(),
-                    created = today
+                    created = dateToday
                 )
 
-                textViewDate.text = today
+                textViewDate.text = dateToday
                 intent.putExtra(EXTRA_REPLY, task)
                 setResult(Activity.RESULT_OK, intent)
 
