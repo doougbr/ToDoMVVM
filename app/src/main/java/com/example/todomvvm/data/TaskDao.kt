@@ -10,7 +10,7 @@ interface TaskDao {
     // declaring methods for database operations (queries) on task_table
 
     @Query("SELECT * FROM task_table") //Query that returns a list of words sorted in ascending order.
-    fun getWords(): LiveData<MutableList<Task>> // we use Flow because we'll get more than one list of Task
+    fun getWords(): LiveData<MutableList<Task>>
 
     @Insert
     suspend fun insert(task: Task)
