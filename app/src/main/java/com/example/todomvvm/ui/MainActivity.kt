@@ -9,7 +9,6 @@ import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -18,7 +17,6 @@ import com.example.todomvvm.R
 import com.example.todomvvm.data.Task
 import com.example.todomvvm.databinding.ActivityMainBinding
 import com.example.todomvvm.adapters.TaskListAdapter
-import com.example.todomvvm.ui.tasks.TaskRepository
 import com.example.todomvvm.ui.tasks.TaskViewModel
 import com.example.todomvvm.ui.tasks.TaskViewModelFactory
 import com.example.todomvvm.ui.tasks.TasksApplication
@@ -131,10 +129,6 @@ class MainActivity : AppCompatActivity(), TaskListAdapter.TaskItemClickListener 
             if (data != null) {
                 val task = data?.getParcelableExtra<Task>(AddTaskActivity.EXTRA_REPLY)!!
                 viewModel.insert(task)
-//                data.getStringExtra(AddTaskActivity.EXTRA_REPLY)?.let { reply ->
-//                    val task = Task(reply)!!
-//                    viewModel.insert(task)
-//                }
             }
         } else {
             Toast.makeText(

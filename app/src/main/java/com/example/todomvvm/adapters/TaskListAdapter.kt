@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -29,9 +27,6 @@ class TaskListAdapter(taskItemClickListener: TaskItemClickListener) :
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val current = getItem(position)
         holder.bind(current, listener)
-        holder.itemView.apply {
-
-        }
     }
 
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
